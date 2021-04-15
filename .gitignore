@@ -1,0 +1,78 @@
+CVS/
+# top-level non-src dirs
+/bin/
+/etc/
+/www/
+/logs/
+# stuff we don't want public
+/src/WordNetSQL/download-wn-db.sh
+/src/Data/
+# config/build system junk
+config.log
+config.status
+TRIPS-stamp
+/src/*/TRIPS
+/src/util/cwc/TRIPS
+MANIFEST.MF
+trips-*.core
+/src/Makefile
+/src/config/Makefile
+/src/config/defs.mk
+/src/config/*/Makefile
+/src/config/*/defs.mk
+/src/config/WordFinder/defs.lisp
+# TextTagger
+/src/TextTagger/TextTagger
+/src/TextTagger/alternate-spellings.tsv
+/src/TextTagger/terms
+/src/TextTagger/wn-multiwords.tsv
+/src/TextTagger/Perl/Geo
+/src/TextTagger/Perl/Lingua
+/src/TextTagger/Perl/TextTagger/Config.pm
+# WordNetSQL
+/src/WordNetSQL/glosstags.psv
+/src/WordNetSQL/wn.db
+/src/WordNetSQL/wn.db-no-really
+/src/WordNetSQL/gsts-warnings.txt
+/src/WordNetSQL/eswn-relation.psv
+/src/WordNetSQL/eswn-synset.psv
+/src/WordNetSQL/eswn-variant.psv
+/src/WordNetSQL/eswn.db
+/src/WordNetSQL/sense-map.psv
+/src/WordNetSQL/sense-map.db
+/src/WordNetSQL/rdoc
+/src/WordNetSQL/pod
+# other modules (mostly run scripts)
+/src/Facilitator/Facilitator
+/src/Graphviz/Graphviz
+/src/Graphviz/Configuration.pm
+/src/KQML/extract-messages
+/src/KQML/find-messages
+/src/TextPP/TextPP
+/src/Tools/trips_cat
+/src/Tools/trips_client
+/src/Tools/trips_exec
+/src/Tools/trips_msg
+/src/DrumGUI/DrumGUI
+/src/DeepSemLex/data/*/
+# system run scripts
+/src/Systems/propolis/trips-propolis
+/src/Systems/propolis/trips-propolis-lisp
+# junk certain editors create
+.*.swp
+*~
+# compiled JVM code
+*.class
+*.jar
+# compiled C code
+*.o
+*.lo
+*.a
+*.la
+# compiled Lisp code
+*.fasl
+*.x86f
+*.dfsl
+*.abcl
+*.dx86fsl
+*.lx86fsl

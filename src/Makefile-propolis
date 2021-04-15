@@ -1,0 +1,48 @@
+#
+# Makefile for TRIPS propolis system
+#
+
+LIBS = \
+	KQML \
+	TripsModule \
+	trlib \
+	util
+
+LISP_MODULES = \
+	util \
+	Comm \
+	Logging \
+	OntologyManager \
+	LexiconManager \
+	Parser \
+	SimpleKB \
+	NewIM \
+	ChannelKB \
+	Domiknows
+
+LISP_PROGRAMS = \
+	Systems/propolis
+
+SPEECH_LIBS = \
+
+SPEECH_PROGRAMS = \
+
+JAVA_PROGRAMS = \
+	Facilitator \
+	DrumGUI
+
+OTHER_PROGRAMS = \
+	TextPP \
+	TextTagger \
+	Graphviz \
+	Tools \
+	EKB
+
+include Makefile-common
+
+#
+# Local variables:
+# mode: makefile
+# End:
+#
+
