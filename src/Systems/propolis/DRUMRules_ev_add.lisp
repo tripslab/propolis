@@ -12,7 +12,7 @@
 	  
 	  ; RAS converts GTP into/to GDP. 
 	  ((ONT::EVENT ?ev ?type :RESULT ?!res)
-	   (ONT::F ?!res (? type1 ont::goal-reln ont::resulting-object) :GROUND ?!res1)  ; resulting-state is in goal-reln
+	   (ONT::F ?!res (? type1 ont::goal-reln ont::resulting-object) :GROUND ?!res1)  ; resulting-state is in goal-reln (but resulting-state would have been extracted as a LOCMOD already so not useful here)
 	   #|
 	   (;(? reln1 ONT::F ONT::QUANTIFIER ONT::KIND ONT::A ONT::INDEF-PLURAL ONT::THE ONT::THE-SET ONT::INDEF-SET ONT::BARE ONT::SM ONT::PRO ONT::PRO-SET ONT::TERM)
 	    ?reln1
@@ -26,6 +26,26 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :rule -res1
 	    :RES ?!res1
 	    :RESULT -
+	    )
+          )
+
+	  ; result1
+	  ; RAS converts GTP into/to GDP. 
+	  ((ONT::EVENT ?ev ?type :RESULT1 ?!res)
+	   (ONT::F ?!res (? type1 ont::goal-reln ont::resulting-object) :GROUND ?!res1)  ; resulting-state is in goal-reln (but resulting-state would have been extracted as a LOCMOD already so not useful here)
+	   #|
+	   (;(? reln1 ONT::F ONT::QUANTIFIER ONT::KIND ONT::A ONT::INDEF-PLURAL ONT::THE ONT::THE-SET ONT::INDEF-SET ONT::BARE ONT::SM ONT::PRO ONT::PRO-SET ONT::TERM)
+	    ?reln1
+	    ?!res1  (? t1 ONT::EVENT-OF-CHANGE ONT::CHEMICAL ONT::MOLECULAR-PART
+;ONT::CELL-PART ONT::BODY-PART ONT::MEDICAL-DISORDERS-AND-CONDITIONS
+ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
+	   |#
+           -res1b>
+           100
+	   (ONT::EVENT ?ev ?type
+	    :rule -res1b
+	    :RES1 ?!res1
+	    :RESULT1 -
 	    )
           )
 	  
