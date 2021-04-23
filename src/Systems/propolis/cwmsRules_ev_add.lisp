@@ -35,6 +35,42 @@
             )
            )
 
+
+	  ; The box moved closer to the table.
+          ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
+          ((?!reln0 ?ev ?type
+	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
+		    :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR -
+		    :EXTENT ?!ext)
+           ;(?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ;(?reln2 ?!obj (? t2 ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!ext
+		   (? extType ONT::EXTENT-PREDICATE)
+		   :GROUND ?!tmp)
+		   ;:FIGURE ?ev)
+           (?reln_tmp ?!tmp (? tmpType ONT::VALUE) :MODS (?!loc))
+           (ONT::F ?!loc (? locType ONT::LESS-VAL ONT::MORE-VAL) :GROUND ?!locVal :SCALE ONT::DISTANCE-SCALE)
+           (?reln_locVal ?!locVal (? locValType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           -loc-comparative>
+           40
+           (?!reln0 ?ev ?type ;?!eventName
+            :rule -loc-comparative
+            ;:AGENT ?!ag
+            ;:AFFECTED ?!obj
+            :LOCMOD ?!loc
+            :LOC ?!locVal
+	    :EXTENT -
+            ;:MODALITY ?modVal   ; these are automatically passed on in cwms (but not in DRUM!)
+            ;:FORCE ?fVal
+            ;:DEGREE ?type_degree
+            ;:FREQUENCY ?type_freq
+            ;:TYPE ?type ; symbolmapping not called; ?type may already have been symbolmapped earlier
+            ;:DRUM ?code
+            )
+           )
+
 	  
 	  ;;;;;;;;;;;;;;;;;;;
 	  ;;;; LOC rules
