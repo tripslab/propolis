@@ -3997,6 +3997,1740 @@
             :DRUM ?code
             ))
 
+          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule40_4_NEUTRAL_AFFECTED ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;; rule40_4_NEUTRAL_AFFECTED rule with NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED rule with only NEUTRAL
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-NEUTRAL>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with only AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-AFFECTED>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-AFFECTED
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED rule with known AFFECTED but unknown proper name argument as NEUTRAL
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robust-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robust-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!ag ?agtype
+            :name ?!agname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-robust-NEUTRAL-TERM
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED rule with known NEUTRAL but unknown proper name argument as AFFECTED
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robust-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robust-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!obj ?objtype
+            :name ?!objname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-robust-AFFECTED-TERM
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with neither NEUTRAL nor AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-none>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-none
+;            :NEUTRAL ?!ag
+;            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with known NEUTRAL but a reflexive pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robustProSELF-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robustProSELF-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!ag
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with known NEUTRAL but a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robustPro-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robustPro-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with a pronoun as NEUTRAL but a known AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robustPro-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robustPro-NEUTRAL
+            :AFFECTED ?!obj
+            :NEUTRAL ?!ag
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with pronouns as both NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robustPro-NEUTRAL-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robustPro-NEUTRAL-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with no NEUTRAL and a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robustPro-AFFECTED-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robustPro-AFFECTED-only
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED rule with a pronoun as NEUTRAL and no AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-robustPro-NEUTRAL-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-robustPro-NEUTRAL-only
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+
+          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with only NEUTRAL
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-NEUTRAL>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with only AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-AFFECTED>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-AFFECTED
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with known AFFECTED but unknown proper name argument as NEUTRAL
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robust-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robust-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!ag ?agtype
+            :name ?!agname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robust-NEUTRAL-TERM
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with known NEUTRAL but unknown proper name argument as AFFECTED
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robust-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robust-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!obj ?objtype
+            :name ?!objname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robust-AFFECTED-TERM
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with neither NEUTRAL nor AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-none>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-none
+;            :NEUTRAL ?!ag
+;            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with known NEUTRAL but a reflexive pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustProSELF-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustProSELF-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!ag
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with known NEUTRAL but a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with a pronoun as NEUTRAL but a known AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-NEUTRAL
+            :AFFECTED ?!obj
+            :NEUTRAL ?!ag
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with pronouns as both NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-NEUTRAL-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-NEUTRAL-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with no NEUTRAL and a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-AFFECTED-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-AFFECTED-only
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd rule with a pronoun as NEUTRAL and no AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+           (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!mod (? m1 ONT::POLARITY-VAL-POSITIVE ONT::POLARITY-VAL-NEGATIVE) :FIGURE ?ev)
+           (ONT::EVAL (symbolmap ?m1 ?!m1_new))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-NEUTRAL-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-POLARITY1-gd-robustPro-NEUTRAL-only
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :POLARITY ?!m1_new
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+
+          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with only NEUTRAL
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-NEUTRAL>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with only AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-AFFECTED>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-AFFECTED
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with known AFFECTED but unknown proper name argument as NEUTRAL
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robust-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robust-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!ag ?agtype
+            :name ?!agname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robust-NEUTRAL-TERM
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with known NEUTRAL but unknown proper name argument as AFFECTED
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robust-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robust-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!obj ?objtype
+            :name ?!objname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robust-AFFECTED-TERM
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with neither NEUTRAL nor AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-none>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-none
+;            :NEUTRAL ?!ag
+;            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with known NEUTRAL but a reflexive pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustProSELF-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustProSELF-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!ag
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with known NEUTRAL but a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with a pronoun as NEUTRAL but a known AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-NEUTRAL
+            :AFFECTED ?!obj
+            :NEUTRAL ?!ag
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with pronouns as both NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-NEUTRAL-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-NEUTRAL-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with no NEUTRAL and a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-AFFECTED-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-AFFECTED-only
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_1 rule with a pronoun as NEUTRAL and no AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+           (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-NEUTRAL-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_1-robustPro-NEUTRAL-only
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+
+          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with only NEUTRAL
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-NEUTRAL>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with only AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-AFFECTED>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-AFFECTED
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with known AFFECTED but unknown proper name argument as NEUTRAL
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robust-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robust-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!ag ?agtype
+            :name ?!agname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robust-NEUTRAL-TERM
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with known NEUTRAL but unknown proper name argument as AFFECTED
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robust-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robust-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!obj ?objtype
+            :name ?!objname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robust-AFFECTED-TERM
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with neither NEUTRAL nor AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-none>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-none
+;            :NEUTRAL ?!ag
+;            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with known NEUTRAL but a reflexive pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustProSELF-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustProSELF-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!ag
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with known NEUTRAL but a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with a pronoun as NEUTRAL but a known AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-NEUTRAL
+            :AFFECTED ?!obj
+            :NEUTRAL ?!ag
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with pronouns as both NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-NEUTRAL-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-NEUTRAL-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with no NEUTRAL and a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-AFFECTED-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-AFFECTED-only
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODA1_2 rule with a pronoun as NEUTRAL and no AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+           (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modA (? tmp ONT::MANNER-REFL ONT::SAME ONT::DIFFERENT ONT::CARDINALITY-VAL ONT::TRAJECTORY))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-NEUTRAL-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODA1_2-robustPro-NEUTRAL-only
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODA ?tmp ;?!modA
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+
+          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with only NEUTRAL
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-NEUTRAL>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with only AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-AFFECTED>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-AFFECTED
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with known AFFECTED but unknown proper name argument as NEUTRAL
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robust-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robust-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!ag ?agtype
+            :name ?!agname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robust-NEUTRAL-TERM
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with known NEUTRAL but unknown proper name argument as AFFECTED
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robust-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robust-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!obj ?objtype
+            :name ?!objname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robust-AFFECTED-TERM
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with neither NEUTRAL nor AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-none>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-none
+;            :NEUTRAL ?!ag
+;            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with known NEUTRAL but a reflexive pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustProSELF-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustProSELF-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!ag
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with known NEUTRAL but a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with a pronoun as NEUTRAL but a known AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-NEUTRAL
+            :AFFECTED ?!obj
+            :NEUTRAL ?!ag
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with pronouns as both NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-NEUTRAL-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-NEUTRAL-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with no NEUTRAL and a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-AFFECTED-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-AFFECTED-only
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_1 rule with a pronoun as NEUTRAL and no AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+           (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-NEUTRAL-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_1-robustPro-NEUTRAL-only
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+
+          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with only NEUTRAL
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-NEUTRAL>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with only AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-AFFECTED>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-AFFECTED
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with known AFFECTED but unknown proper name argument as NEUTRAL
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robust-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robust-NEUTRAL
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!ag ?agtype
+            :name ?!agname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robust-NEUTRAL-TERM
+            )
+           )
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with known NEUTRAL but unknown proper name argument as AFFECTED
+          ;; (includes a TERM extraction for the unknown argument)
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robust-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robust-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            )
+            (ONT::TERM ?!obj ?objtype
+            :name ?!objname
+            :drum -
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robust-AFFECTED-TERM
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with neither NEUTRAL nor AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-none>
+           40
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-none
+;            :NEUTRAL ?!ag
+;            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with known NEUTRAL but a reflexive pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustProSELF-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustProSELF-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!ag
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with known NEUTRAL but a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with a pronoun as NEUTRAL but a known AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-NEUTRAL>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-NEUTRAL
+            :AFFECTED ?!obj
+            :NEUTRAL ?!ag
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with pronouns as both NEUTRAL and AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
+           (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-NEUTRAL-AFFECTED>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-NEUTRAL-AFFECTED
+            :NEUTRAL ?!ag
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with no NEUTRAL and a pronoun as AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-AFFECTED-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-AFFECTED-only
+            :NEUTRAL -
+            :AFFECTED ?!obj
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+          ;; rule40_4_NEUTRAL_AFFECTED-MODN1_2 rule with a pronoun as NEUTRAL and no AFFECTED
+          ((?!reln0 ?ev
+            (? type ONT::OCCURRING ) :NEUTRAL ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+           (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!modN (? tmp ONT::MANNER-UNDO ONT::NEG))
+           (ONT::EVAL (symbolmap ?type ?!eventName -rule40_4_NEUTRAL_AFFECTED))
+           -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-NEUTRAL-only>
+           39
+           (ONT::event ?ev ?!eventName
+            :rule -rule40_4_NEUTRAL_AFFECTED-MODN1_2-robustPro-NEUTRAL-only
+            :NEUTRAL ?!ag
+            :AFFECTED -
+            :MODN ?tmp ;?!modN
+            :MODALITY ?modVal
+            :FORCE ?fVal
+            :DEGREE ?var_degree
+            :FREQUENCY ?var_freq
+            :TYPE ?type
+            :DRUM ?code
+            ))
+
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule40_4_AFFECTED_AFFECTED1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule40_4_AFFECTED_AFFECTED1 rule with AFFECTED and AFFECTED1
           ((?!reln0 ?ev
@@ -10936,7 +12670,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AGENT_AFFECTED ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AGENT_AFFECTED rule with AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -10958,7 +12692,7 @@
            )
           ;; rule20_4_AGENT_AFFECTED rule with only AGENT
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -10979,7 +12713,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11002,7 +12736,7 @@
           ;; rule20_4_AGENT_AFFECTED rule with known AFFECTED but unknown proper name argument as AGENT
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11030,7 +12764,7 @@
           ;; rule20_4_AGENT_AFFECTED rule with known AGENT but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -11056,7 +12790,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with neither AGENT nor AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11077,7 +12811,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with known AGENT but a reflexive pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -11098,7 +12832,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with known AGENT but a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11119,7 +12853,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with a pronoun as AGENT but a known AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11140,7 +12874,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with pronouns as both AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11161,7 +12895,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with no AGENT and a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -11181,7 +12915,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED rule with a pronoun as AGENT and no AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -11203,7 +12937,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AGENT_AFFECTED-POLARITY1-gd ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11228,7 +12962,7 @@
            )
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with only AGENT
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11252,7 +12986,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11278,7 +13012,7 @@
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with known AFFECTED but unknown proper name argument as AGENT
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11309,7 +13043,7 @@
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with known AGENT but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -11338,7 +13072,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with neither AGENT nor AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11362,7 +13096,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with known AGENT but a reflexive pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -11386,7 +13120,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with known AGENT but a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11410,7 +13144,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with a pronoun as AGENT but a known AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11434,7 +13168,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with pronouns as both AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11458,7 +13192,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with no AGENT and a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -11481,7 +13215,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-POLARITY1-gd rule with a pronoun as AGENT and no AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -11506,7 +13240,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AGENT_AFFECTED-MODA1_1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11530,7 +13264,7 @@
            )
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with only AGENT
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11553,7 +13287,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11578,7 +13312,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with known AFFECTED but unknown proper name argument as AGENT
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11608,7 +13342,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with known AGENT but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -11636,7 +13370,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with neither AGENT nor AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11659,7 +13393,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with known AGENT but a reflexive pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -11682,7 +13416,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with known AGENT but a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11705,7 +13439,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with a pronoun as AGENT but a known AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11728,7 +13462,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with pronouns as both AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11751,7 +13485,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with no AGENT and a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -11773,7 +13507,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_1 rule with a pronoun as AGENT and no AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -11797,7 +13531,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AGENT_AFFECTED-MODA1_2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11821,7 +13555,7 @@
            )
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with only AGENT
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11844,7 +13578,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11869,7 +13603,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with known AFFECTED but unknown proper name argument as AGENT
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11899,7 +13633,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with known AGENT but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -11927,7 +13661,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with neither AGENT nor AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -11950,7 +13684,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with known AGENT but a reflexive pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -11973,7 +13707,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with known AGENT but a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -11996,7 +13730,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with a pronoun as AGENT but a known AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12019,7 +13753,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with pronouns as both AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12042,7 +13776,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with no AGENT and a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -12064,7 +13798,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODA1_2 rule with a pronoun as AGENT and no AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -12088,7 +13822,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AGENT_AFFECTED-MODN1_1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12112,7 +13846,7 @@
            )
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with only AGENT
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12135,7 +13869,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12160,7 +13894,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with known AFFECTED but unknown proper name argument as AGENT
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12190,7 +13924,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with known AGENT but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -12218,7 +13952,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with neither AGENT nor AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12241,7 +13975,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with known AGENT but a reflexive pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -12264,7 +13998,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with known AGENT but a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12287,7 +14021,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with a pronoun as AGENT but a known AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12310,7 +14044,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with pronouns as both AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12333,7 +14067,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with no AGENT and a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -12355,7 +14089,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_1 rule with a pronoun as AGENT and no AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -12379,7 +14113,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AGENT_AFFECTED-MODN1_2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12403,7 +14137,7 @@
            )
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with only AGENT
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12426,7 +14160,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12451,7 +14185,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with known AFFECTED but unknown proper name argument as AGENT
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12481,7 +14215,7 @@
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with known AGENT but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -12509,7 +14243,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with neither AGENT nor AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT - :AFFECTED - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -12532,7 +14266,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with known AGENT but a reflexive pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -12555,7 +14289,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with known AGENT but a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12578,7 +14312,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with a pronoun as AGENT but a known AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12601,7 +14335,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with pronouns as both AGENT and AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -12624,7 +14358,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with no AGENT and a pronoun as AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AFFECTED ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -12646,7 +14380,7 @@
             ))
           ;; rule20_4_AGENT_AFFECTED-MODN1_2 rule with a pronoun as AGENT and no AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::MOTION ONT::PUT ONT::PUSH ONT::PULL ONT::RELEASING ONT::GIVING ONT::ENTERING ONT::CAUSE-IN ONT::CAUSE-COME-FROM ONT::FILL-CONTAINER ONT::GUIDING ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::ROTATE ONT::SEPARATION ONT::HITTING ) :AGENT ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -16138,7 +17872,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AFFECTED_AFFECTED1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AFFECTED_AFFECTED1 rule with AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16160,7 +17894,7 @@
            )
           ;; rule20_4_AFFECTED_AFFECTED1 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16181,7 +17915,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with only AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16204,7 +17938,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1 rule with known AFFECTED1 but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16232,7 +17966,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1 rule with known AFFECTED but unknown proper name argument as AFFECTED1
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -16258,7 +17992,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with neither AFFECTED nor AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16279,7 +18013,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with known AFFECTED but a reflexive pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -16300,7 +18034,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with known AFFECTED but a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16321,7 +18055,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with a pronoun as AFFECTED but a known AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16342,7 +18076,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with pronouns as both AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16363,7 +18097,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with no AFFECTED and a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -16383,7 +18117,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1 rule with a pronoun as AFFECTED and no AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -16405,7 +18139,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16430,7 +18164,7 @@
            )
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16454,7 +18188,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with only AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16480,7 +18214,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with known AFFECTED1 but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16511,7 +18245,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with known AFFECTED but unknown proper name argument as AFFECTED1
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -16540,7 +18274,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with neither AFFECTED nor AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16564,7 +18298,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with known AFFECTED but a reflexive pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -16588,7 +18322,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with known AFFECTED but a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16612,7 +18346,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with a pronoun as AFFECTED but a known AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16636,7 +18370,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with pronouns as both AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16660,7 +18394,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with no AFFECTED and a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -16683,7 +18417,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-POLARITY1-gd rule with a pronoun as AFFECTED and no AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - )
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -16708,7 +18442,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16732,7 +18466,7 @@
            )
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16755,7 +18489,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with only AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16780,7 +18514,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with known AFFECTED1 but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16810,7 +18544,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with known AFFECTED but unknown proper name argument as AFFECTED1
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -16838,7 +18572,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with neither AFFECTED nor AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -16861,7 +18595,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with known AFFECTED but a reflexive pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -16884,7 +18618,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with known AFFECTED but a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16907,7 +18641,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with a pronoun as AFFECTED but a known AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16930,7 +18664,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with pronouns as both AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -16953,7 +18687,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with no AFFECTED and a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -16975,7 +18709,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_1 rule with a pronoun as AFFECTED and no AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modA))
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -16999,7 +18733,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17023,7 +18757,7 @@
            )
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17046,7 +18780,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with only AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17071,7 +18805,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with known AFFECTED1 but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17101,7 +18835,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with known AFFECTED but unknown proper name argument as AFFECTED1
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -17129,7 +18863,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with neither AFFECTED nor AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17152,7 +18886,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with known AFFECTED but a reflexive pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -17175,7 +18909,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with known AFFECTED but a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17198,7 +18932,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with a pronoun as AFFECTED but a known AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17221,7 +18955,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with pronouns as both AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17244,7 +18978,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with no AFFECTED and a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -17266,7 +19000,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODA1_2 rule with a pronoun as AFFECTED and no AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modA)
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -17290,7 +19024,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17314,7 +19048,7 @@
            )
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17337,7 +19071,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with only AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17362,7 +19096,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with known AFFECTED1 but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17392,7 +19126,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with known AFFECTED but unknown proper name argument as AFFECTED1
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -17420,7 +19154,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with neither AFFECTED nor AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17443,7 +19177,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with known AFFECTED but a reflexive pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -17466,7 +19200,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with known AFFECTED but a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17489,7 +19223,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with a pronoun as AFFECTED but a known AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17512,7 +19246,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with pronouns as both AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17535,7 +19269,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with no AFFECTED and a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -17557,7 +19291,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_1 rule with a pronoun as AFFECTED and no AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MODS (?!modN))
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -17581,7 +19315,7 @@
           ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17605,7 +19339,7 @@
            )
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with only AFFECTED
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17628,7 +19362,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with only AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17653,7 +19387,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with known AFFECTED1 but unknown proper name argument as AFFECTED
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?!reln1 ?!ag (:* (? agtype ONT::REFERENTIAL-SEM) ?!agname) :name-of ?!name)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17683,7 +19417,7 @@
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with known AFFECTED but unknown proper name argument as AFFECTED1
           ;; (includes a TERM extraction for the unknown argument)
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (?!reln1 ?!obj (:* (? objtype ONT::REFERENTIAL-SEM) ?!objname) :name-of ?!name)
            (ONT::F ?var_degree ?type_degree)  
@@ -17711,7 +19445,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with neither AFFECTED nor AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED - :AFFECTED1 - :AFFECTED - :AFFECTED1 - :AFFECTED-RESULT - :NEUTRAL - :NEUTRAL1 - :NEUTRAL2 - :FORMAL - :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
 ;           (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
 ;           (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::F ?var_degree ?type_degree)  
@@ -17734,7 +19468,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with known AFFECTED but a reflexive pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ((? tself ONT::TERM) ?!obj ?!objtype :PRO (? self W::ITSELF W::THEMSELVES))
            (ONT::F ?var_degree ?type_degree)  
@@ -17757,7 +19491,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with known AFFECTED but a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17780,7 +19514,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with a pronoun as AFFECTED but a known AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
            (ONT::TERM ?!ag ?!agtype :PRO (? pro W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17803,7 +19537,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with pronouns as both AFFECTED and AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (ONT::TERM ?!ag ?!agtype :PRO (? pro1 W::I W::you W::we W::it W::they W::he W::she W::*you* W::this W::that w::what w::which))
            (ONT::TERM ?!obj ?!objtype :PRO (? pro2 W::me W::you W::us W::it W::them W::him W::her W::*you* W::this W::that w::what w::which))
            (ONT::F ?var_degree ?type_degree)  
@@ -17826,7 +19560,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with no AFFECTED and a pronoun as AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED1 ?!obj :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (ONT::TERM ?!obj ?!objtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
@@ -17848,7 +19582,7 @@
             ))
           ;; rule20_4_AFFECTED_AFFECTED1-MODN1_2 rule with a pronoun as AFFECTED and no AFFECTED1
           ((?!reln0 ?ev
-            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
+            (? type ONT::INCUR-INHERIT-RECEIVE ONT::INHALE ONT::EXHALE ONT::EXCRETE ONT::COLLIDE ) :AFFECTED ?!ag :DRUM ?code :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR - :MANNER ?!modN)
            (ONT::TERM ?!ag ?!agtype :PRO ?!pro)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)

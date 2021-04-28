@@ -64,6 +64,6 @@
 (setq im::*allow-optional-lfs* t) ;; set to t for optional term matching
 
 ;;;; extractor rules
-(setq im::*extraction-sequence* '((im::drum) (im::cwms_ev_add) (im::drum_ev_add) (im::postprocessRules) (im::emptyrules)))
+(setq im::*extraction-sequence* '((im::drum) (im::sequence_add) (im::cwms_ev_add) (im::drum_ev_add) (im::postprocessRules) (im::emptyrules)))
 (setq im::*substitute-terms-in-extraction* t)
 (setq im::*roles-to-emit* nil)

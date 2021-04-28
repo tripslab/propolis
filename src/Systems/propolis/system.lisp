@@ -23,6 +23,7 @@
 
 ;;;; extractor rules
 (load #!TRIPS"src;Systems;propolis;DRUMRules_ev.lisp")
+(load #!TRIPS"src;Systems;propolis;sequence_add.lisp")
 (load #!TRIPS"src;Systems;propolis;cwmsRules_ev_add.lisp")
 (load #!TRIPS"src;Systems;propolis;DRUMRules_ev_add.lisp")
 (load #!TRIPS"src;Systems;propolis;postprocessRules.lisp")
