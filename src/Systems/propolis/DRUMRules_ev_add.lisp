@@ -12,7 +12,7 @@
 	  
 	  ; RAS converts GTP into/to GDP. 
 	  ((ONT::EVENT ?ev ?type :RESULT ?!res)
-	   (ONT::F ?!res (? type1 ont::goal-reln ont::resulting-object) :GROUND ?!res1)  ; resulting-state is in goal-reln (but resulting-state would have been extracted as a LOCMOD already so not useful here)
+	   (ONT::F ?!res (? type1 ont::goal-reln ont::resulting-object) :GROUND ?!res1)  ; resulting-state is in goal-reln (but resulting-state would have been extracted as a LOCMOD already so not useful here) ; update: resulting-state is excluded from location extractions now
 	   #|
 	   (;(? reln1 ONT::F ONT::QUANTIFIER ONT::KIND ONT::A ONT::INDEF-PLURAL ONT::THE ONT::THE-SET ONT::INDEF-SET ONT::BARE ONT::SM ONT::PRO ONT::PRO-SET ONT::TERM)
 	    ?reln1
@@ -32,7 +32,7 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	  ; result1
 	  ; RAS converts GTP into/to GDP. 
 	  ((ONT::EVENT ?ev ?type :RESULT1 ?!res)
-	   (ONT::F ?!res (? type1 ont::goal-reln ont::resulting-object) :GROUND ?!res1)  ; resulting-state is in goal-reln (but resulting-state would have been extracted as a LOCMOD already so not useful here)
+	   (ONT::F ?!res (? type1 ont::goal-reln ont::resulting-object) :GROUND ?!res1)  ; resulting-state is in goal-reln (but resulting-state would have been extracted as a LOCMOD already so not useful here) ; update: resulting-state is excluded from location extractions now
 	   #|
 	   (;(? reln1 ONT::F ONT::QUANTIFIER ONT::KIND ONT::A ONT::INDEF-PLURAL ONT::THE ONT::THE-SET ONT::INDEF-SET ONT::BARE ONT::SM ONT::PRO ONT::PRO-SET ONT::TERM)
 	    ?reln1

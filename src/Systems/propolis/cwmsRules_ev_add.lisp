@@ -11,10 +11,13 @@
            (?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
            ;(?reln2 ?!obj (? t2 ONT::REFERENTIAL-SEM))
 	   (ONT::F ?!loc
-		   (? tmp ONT::POSITION-RELN ONT::PATH)
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
 		   :GROUND ?!locVal)
 		   ;:FIGURE ?ev)
-           (?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT)) ; allow REFERENTIAL-SEM, e.g., misspelled words(!) and pronouns
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
            ;(ONT::EVAL (symbolmap ?type ?!eventName -rule20_4_AGENT_AFFECTED))
@@ -52,7 +55,8 @@
 		   ;:FIGURE ?ev)
            (?reln_tmp ?!tmp (? tmpType ONT::VALUE) :MODS (?!loc))
            (ONT::F ?!loc (? locType ONT::LESS-VAL ONT::MORE-VAL) :GROUND ?!locVal :SCALE ONT::DISTANCE-SCALE)
-           (?reln_locVal ?!locVal (? locValType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?reln_locVal ?!locVal (? locValType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?reln_locVal ?!locVal (? !locValType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
            -loc-comparative>
            40
            (?!reln0 ?ev ?type ;?!eventName
@@ -122,11 +126,14 @@
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
            (ONT::F ?!loc
-		   (? tmp ONT::POSITION-RELN ONT::PATH)
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
 		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
 		   :GROUND ?!locVal)
 		   ;:FIGURE ?ev)
-           (?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
            ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED)) ; should have been symbol-mapped already from previous levels.  If done here, ONT::F types would be changed from (:* ont::type w::word) to just ont::type even if it doesn't match anything in symbolmapping
            -loc2>
            40
@@ -163,7 +170,8 @@
 		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
 		   :GROUND ?!locVal)
 		   ;:FIGURE ?ev)
-           (?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
            ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED)) ; should have been symbol-mapped already from previous levels.  If done here, ONT::F types would be changed from (:* ont::type w::word) to just ont::type even if it doesn't match anything in symbolmapping
            -loc2-mod>
            40
@@ -193,15 +201,19 @@
 		    :passive -
 		    )
            ;(?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
-           (?reln2 ?!obj (? t2 ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART) :LOCATION ?!loc)
+           ;(?reln2 ?!obj (? t2 ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART) :LOCATION ?!loc)
+           (?reln2 ?!obj (? !t2 ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT) :LOCATION ?!loc)
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
            (ONT::F ?!loc
-		   (? tmp ONT::POSITION-RELN ONT::PATH)
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
 		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
 		   :GROUND ?!locVal
 		   :FIGURE ?!obj)
-           (?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
            ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED))
            -loc2-AFFECTED>
            40
@@ -232,11 +244,14 @@
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
            (ONT::F ?!loc
-		   (? tmp ONT::POSITION-RELN ONT::PATH)
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
 		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
 		   :GROUND ?!locVal)
 		   ;:FIGURE ?ev)
-           (?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
            ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED))
            -loc3>
            40
@@ -313,11 +328,14 @@
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
            (ONT::F ?!loc
-		   (? tmp ONT::POSITION-RELN ONT::PATH)
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
 		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
 		   :GROUND ?!locVal)
 		   ;:FIGURE ?ev)
-           (?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
            ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED))
            -loc4a>
            40
@@ -337,7 +355,7 @@
             )
            )
 
-	  ; no FIGURE; :RESULT points to ?!loc
+	  ; no FIGURE; :RESULT1 points to ?!loc
           ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
           ((?!reln0 ?ev ?type
 	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
@@ -348,11 +366,14 @@
            (ONT::F ?var_degree ?type_degree)  
            (ONT::F ?var_freq ?type_freq)
            (ONT::F ?!loc
-		   (? tmp ONT::POSITION-RELN ONT::PATH)
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
 		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
 		   :GROUND ?!locVal)
 		   ;:FIGURE ?ev)
-           (?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
            ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED))
            -loc4b>
            40
