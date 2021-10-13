@@ -35,7 +35,7 @@
 					 (w::CP 1.5)
 					 (w::VP 2) 
 					 (w::punc .5)
-					 (ONT::speech-act 2) ;; this occurs if we have an sequence of speech acts
+					 (ONT::speech-act 1.2) ;; this occurs if we have an sequence of speech acts
 					 )))
 	))
 
