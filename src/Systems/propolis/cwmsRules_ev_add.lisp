@@ -393,6 +393,44 @@
             )
            )
 
+	  ; no FIGURE; :RESULT2 points to ?!loc
+          ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
+          ((?!reln0 ?ev ?type
+	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
+		    :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR -
+		    :RESULT2 ?!loc)
+           ;(?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ;(?reln2 ?!obj (? t2 ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!loc
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
+		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
+		   :GROUND ?!locVal)
+		   ;:FIGURE ?ev)
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
+           ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED))
+           -loc4c>
+           40
+           (?!reln0 ?ev ?type ;?!eventName
+            :rule -loc4c
+            ;:AGENT ?!ag
+            ;:AFFECTED ?!obj
+            :LOCMOD2 ?tmp
+            :LOC2 ?!locVal
+	    :RESULT2 -
+            ;:MODALITY ?modVal   ; these are automatically passed on in cwms (but not in DRUM!)
+            ;:FORCE ?fVal
+            ;:DEGREE ?type_degree
+            ;:FREQUENCY ?type_freq
+            ;:TYPE ?type
+            ;:DRUM ?code
+            )
+           )
+	  
 	  ; ONT::DIRECTION with no GROUND (only extract :LOCMOD, no :LOC)
 	  ; e.g., I put the box down.	
 	  ; 
@@ -434,7 +472,7 @@
 	  ; ONT::DIRECTION with no GROUND (only extract :LOCMOD, no :LOC)
 	  ; e.g., I put the box down.	
 	  ; 
-	  ; no FIGURE; :RESULT points to ?!loc
+	  ; no FIGURE; :RESULT1 points to ?!loc
           ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
           ((?!reln0 ?ev ?type
 	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
@@ -460,6 +498,44 @@
             :LOCMOD ?tmp
             ;:LOC ?!locVal
 	    :RESULT1 -
+            ;:MODALITY ?modVal   ; these are automatically passed on in cwms (but not in DRUM!)
+            ;:FORCE ?fVal
+            ;:DEGREE ?type_degree
+            ;:FREQUENCY ?type_freq
+            ;:TYPE ?type
+            ;:DRUM ?code
+            )
+           )
+
+	  ; ONT::DIRECTION with no GROUND (only extract :LOCMOD, no :LOC)
+	  ; e.g., I put the box down.	
+	  ; 
+	  ; no FIGURE; :RESULT2 points to ?!loc
+          ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
+          ((?!reln0 ?ev ?type
+	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
+		    :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR -
+		    :RESULT2 ?!loc)
+           ;(?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ;(?reln2 ?!obj (? t2 ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+           (ONT::F ?!loc
+		   (? tmp ONT::DIRECTION)
+		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
+		   :GROUND -)
+		   ;:FIGURE ?ev)
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED))
+           -loc5c>
+           40
+           (?!reln0 ?ev ?type ;?!eventName
+            :rule -loc5c
+            ;:AGENT ?!ag
+            ;:AFFECTED ?!obj
+            :LOCMOD ?tmp
+            ;:LOC ?!locVal
+	    :RESULT2 -
             ;:MODALITY ?modVal   ; these are automatically passed on in cwms (but not in DRUM!)
             ;:FORCE ?fVal
             ;:DEGREE ?type_degree
