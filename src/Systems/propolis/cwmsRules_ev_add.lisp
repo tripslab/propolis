@@ -232,7 +232,6 @@
             )
            )
 
-	  
 	  ; no FIGURE; :SOURCE points to ?!loc
           ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
           ((?!reln0 ?ev ?type
@@ -271,6 +270,47 @@
             )
            )
 
+	  ; no FIGURE; :SOURCE points to ?!locVal (preposition is skipped); e.g., I removed the pizza from the box
+          ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
+          ((?!reln0 ?ev ?type
+	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
+		    :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR -
+		    :SOURCE ?!locVal)
+           ;(?reln1 ?!ag  (? t1 ONT::REFERENTIAL-SEM))
+           ;(?reln2 ?!obj (? t2 ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (ONT::F ?var_degree ?type_degree)  
+           (ONT::F ?var_freq ?type_freq)
+	   #|
+           (ONT::F ?!loc
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
+		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
+		   :GROUND ?!locVal)
+		   ;:FIGURE ?ev)
+	   |#
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))
+           ;(ONT::EVAL (symbolmap ?type ?!eventName -rule40_2_AGENT_AFFECTED))
+           -loc3b>
+           40
+           (?!reln0 ?ev ?type ;?!eventName
+            :rule -loc3b
+            ;:AGENT ?!ag
+            ;:AFFECTED ?!obj
+            :LOCMOD (:* ONT::SOURCE-AS-LOC W::FROM)
+            :LOC ?!locVal
+	    :SOURCE -
+            ;:MODALITY ?modVal   ; these are automatically passed on in cwms (but not in DRUM!)
+            ;:FORCE ?fVal
+            ;:DEGREE ?type_degree
+            ;:FREQUENCY ?type_freq
+            ;:TYPE ?type
+            ;:DRUM ?code
+            )
+           )
+
+	  
 	  #| this is now split into two rules so we can zero out the :RESULT and/or :RESULT1
 	  ; no FIGURE; :RESULT points to ?!loc
           ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED

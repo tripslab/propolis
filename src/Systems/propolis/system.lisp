@@ -22,11 +22,13 @@
   (im::send-msg `(request :receiver parser :content (eval ,x))))
 
 ;;;; extractor rules
+(load #!TRIPS"src;Systems;propolis;preprocessRules.lisp")
 (load #!TRIPS"src;Systems;propolis;DRUMRules_ev.lisp")
 (load #!TRIPS"src;Systems;propolis;sequence_add.lisp")
 (load #!TRIPS"src;Systems;propolis;cwmsRules_ev_add.lisp")
 (load #!TRIPS"src;Systems;propolis;DRUMRules_ev_add.lisp")
 (load #!TRIPS"src;Systems;propolis;postprocessRules.lisp")
+(load #!TRIPS"src;Systems;propolis;postprocessRules2.lisp")
 (load #!TRIPS"src;Systems;propolis;emptyRules.lisp")
 (load #!TRIPS"src;Systems;propolis;symbolmapping.lisp")
 (setq im::*roles-to-emit* nil)

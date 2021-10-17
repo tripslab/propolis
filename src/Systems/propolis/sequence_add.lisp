@@ -7,10 +7,12 @@
 
 	  ; I pushed the pizza quickly and into the oven.  (extract only "into the oven")
 	  ; I pushed the pizza into the oven or onto the table (the "or" is extracted as :OPERATOR)
+	  ; both -loc_seq> and -loc_seq1> fire: -loc_seq> extracts the first element and -loc_seq1> extracts the second element
 	  ; to fix: only 2-element sequences
 	  
 	  ; no FIGURE; :RESULT points to ?!loc
           ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
+	  ; extract first element of sequence
           ((?!reln0 ?ev ?type
 	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
 		    :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR -
@@ -49,6 +51,7 @@
 
 	  ; no FIGURE; :RESULT points to ?!loc
           ;; modified from rule40_2_AGENT_AFFECTED-CELL_LOC1-gd-others rule with AGENT and AFFECTED
+	  ; extract second element of sequence
           ((?!reln0 ?ev ?type
 	    ;:AGENT ?!ag :AFFECTED ?!obj :DRUM ?code
 		    :MODALITY ?modVal :FORCE ?fVal :DEGREE ?var_degree :FREQUENCY ?var_freq :OPERATOR -

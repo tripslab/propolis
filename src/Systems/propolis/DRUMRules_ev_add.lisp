@@ -181,7 +181,53 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :LOC -
 	    :LOCMOD -
 	    )
-          )
+	   )
+
+	  ;;;;;;;;;;;;;;;;;;;
+	  ;;;; remap locations to to/from
+	  ;;;;;;;;;;;;;;;;;;;
+
+	  ; change NEUTRAL role to location for enter/leave/exit/etc
+	  ((ONT::EVENT ?!ev ONT::MOVE :TYPE (? t ONT::DEPART) :NEUTRAL ?!n)
+	   -enter-depart>
+	   100
+	   (ONT::EVENT ?!ev ONT::MOVE
+	    :from ?!n
+	    :neutral -
+	    :rule -enter-depart
+	    ))
+
+	  ; change NEUTRAL role to location for enter/leave/exit/etc
+	  ((ONT::EVENT ?!ev ONT::MOVE :TYPE (? t ONT::ENTERING) :NEUTRAL ?!n)
+	   -enter-depart2>
+	   100
+	   (ONT::EVENT ?!ev ONT::MOVE
+	    ;:locmod (:* ONT::GOAL-AS-CONTAINMENT W::INTO)
+	    :to ?!n
+	    :neutral -
+	    :rule -enter-depart2
+	    ))
+
+	  ((ONT::EVENT ?!ev ONT::MOVE :locmod (? locmod ONT::SOURCE-RELN ONT::OUTSIDE) :loc ?!n)
+	   -from>
+	   100
+	   (ONT::EVENT ?!ev ONT::MOVE
+	    :from ?!n
+	    :locmod -
+	    :loc -
+	    :rule -from
+	    ))
+
+	  ((ONT::EVENT ?!ev ONT::MOVE :locmod (? locmod ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC) :loc ?!n)
+	   -to>
+	   100
+	   (ONT::EVENT ?!ev ONT::MOVE
+	    :to ?!n
+	    :locmod -
+	    :loc -
+	    :rule -to
+	    ))
+
 	  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

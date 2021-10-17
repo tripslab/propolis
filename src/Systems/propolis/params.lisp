@@ -16,6 +16,7 @@
 	((setf (parser::barrier-penalty parser::*chart*) .995)) ;.99))        ;; this is the penalty for arcs that attempt to cross barriers from the preferences from stat parser
 	(parser::*kr-type-info-desired* '(:WNsense))
 	(parser::*add-lex-to-lf* t)
+	(parser::*sem-features-to-output* '(F::container))
 	(parser::*no-positions-in-lf* nil)       ;; generate start and end positions
 	((parser::setmaxnumberentries 5000))    ;;  # constituents built before stopping
         ((parser::setmaxchartsize 5000))        ;;  max #  characters in any input
@@ -24,10 +25,12 @@
 	((setf (parser::flexible-semantic-matching parser::*chart*) t))  ;;  selection preferences rather than restrictions
 	(parser::*include-parse-tree-in-messages* '(w::lex)) ;; required for WebParser
 	(parser::*semantic-skeleton-scoring-enabled* nil) ; disable semantic scoring
+	(parser::*rules-to-suppress* '(w::-vp-pastprt-adjp-attributive> w::-vp-pastprt-adjp->)) ; state-resulting-from
+	
 	((parser::customize-cost-table '((ont::SA_QUERY 2)
 					 (ont::SA_IDENTIFY 1.2)
 					 (ont::SA_pred-fragment 2) 
-					 (ont::SA_request 2)
+					 (ont::SA_request 1.1)
 					 (ont::SA_YN-QUESTION 2)
 					 (ont::SA_CONFIRM 1.3)
 					 (ont::SA_WH-QUESTION 2)
@@ -64,6 +67,6 @@
 (setq im::*allow-optional-lfs* t) ;; set to t for optional term matching
 
 ;;;; extractor rules
-(setq im::*extraction-sequence* '((im::drum) (im::sequence_add) (im::cwms_ev_add) (im::drum_ev_add) (im::postprocessRules) (im::emptyrules)))
+(setq im::*extraction-sequence* '((im::preprocessRules) (im::drum) (im::sequence_add) (im::cwms_ev_add) (im::drum_ev_add) (im::postprocessRules) (im::postprocessRules2) (im::emptyrules)))
 (setq im::*substitute-terms-in-extraction* t)
 (setq im::*roles-to-emit* nil)
