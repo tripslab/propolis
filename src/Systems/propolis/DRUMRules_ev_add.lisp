@@ -208,26 +208,49 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :rule -enter-depart2
 	    ))
 
-	  ((ONT::EVENT ?!ev ONT::MOVE :locmod (? locmod ONT::SOURCE-RELN ONT::OUTSIDE) :loc ?!n)
+	  ((?reln ?!ev ?t :locmod (? locmod ONT::SOURCE-RELN ONT::OUTSIDE) :loc ?!n)
+	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -to>
 	   -from>
 	   100
-	   (ONT::EVENT ?!ev ONT::MOVE
+	   (?reln ?!ev ?t
 	    :from ?!n
 	    :locmod -
 	    :loc -
 	    :rule -from
 	    ))
 
-	  ((ONT::EVENT ?!ev ONT::MOVE :locmod (? locmod ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC) :loc ?!n)
+	  ((?reln ?!ev ?t :locmod (? locmod ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC) :loc ?!n)
+	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -from>
 	   -to>
 	   100
-	   (ONT::EVENT ?!ev ONT::MOVE
+	   (?reln ?!ev ?t
 	    :to ?!n
 	    :locmod -
 	    :loc -
 	    :rule -to
 	    ))
 
+	  ((?reln ?!ev ?t :locmod1 (? locmod ONT::SOURCE-RELN ONT::OUTSIDE) :loc1 ?!n)
+	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -to>
+	   -from1>
+	   100
+	   (?reln ?!ev ?t
+	    :from ?!n
+	    :locmod1 -
+	    :loc1 -
+	    :rule -from1
+	    ))
+
+	  ((?reln ?!ev ?t :locmod1 (? locmod ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC) :loc1 ?!n)
+	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -to>
+	   -to1>
+	   100
+	   (?reln ?!ev ?t
+	    :to ?!n
+	    :locmod1 -
+	    :loc1 -
+	    :rule -to1
+	    ))
 	  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
