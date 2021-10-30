@@ -16,7 +16,7 @@
 	((setf (parser::barrier-penalty parser::*chart*) .995)) ;.99))        ;; this is the penalty for arcs that attempt to cross barriers from the preferences from stat parser
 	(parser::*kr-type-info-desired* '(:WNsense))
 	(parser::*add-lex-to-lf* t)
-	(parser::*sem-features-to-output* '(F::container))
+	(parser::*sem-features-to-output* '(F::container F::mobility)
 	(parser::*no-positions-in-lf* nil)       ;; generate start and end positions
 	((parser::setmaxnumberentries 5000))    ;;  # constituents built before stopping
         ((parser::setmaxchartsize 5000))        ;;  max #  characters in any input
