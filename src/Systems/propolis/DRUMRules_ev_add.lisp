@@ -253,6 +253,26 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    ))
 	  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	  ; time 
+
+	  ; I ate Saturday.
+	  ; I ate in January.
+	  ; I ate beginning Saturday.
+	  ; I ate yesterday.
+	  ; I ate in recent weeks.
+          ((?!reln0 ?ev ?type :TIME ?!time)
+	   (?!reln1 ?!time (? time-type ONT::TEMPORAL-PREDICATE) :GROUND ?!gd)
+	   (?reln2 ?!gd ?t2)
+           -time>
+           100
+           (?!reln0 ?ev ?type 
+            :rule -time
+	    :TIMEMOD ?time-type
+	    :TIME ?!gd
+            )
+           )
+	  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	  )
 	)
