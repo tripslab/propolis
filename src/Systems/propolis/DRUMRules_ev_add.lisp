@@ -208,7 +208,7 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :rule -enter-depart2
 	    ))
 
-	  ((?reln ?!ev ?t :locmod (? locmod ONT::SOURCE-RELN ONT::OUTSIDE) :loc ?!n)
+	  ((?reln ?!ev ?t :locmod (? locmod ONT::SOURCE-RELN ONT::OUTSIDE ONT::OFF) :loc ?!n)
 	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -to>
 	   -from>
 	   100
