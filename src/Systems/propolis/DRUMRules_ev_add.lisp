@@ -208,7 +208,9 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :rule -enter-depart2
 	    ))
 
-	  ((?reln ?!ev ?t :locmod (? locmod ONT::SOURCE-RELN ONT::OUTSIDE ONT::OFF) :loc ?!n)
+	  ((?reln ?!ev ?t
+		  :locmod (:* (? locmod ONT::SOURCE-RELN ONT::OUTSIDE ONT::OFF) (? !w w::outside w::outside-of))
+		  :loc ?!n)
 	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -to>
 	   -from>
 	   100
@@ -219,6 +221,23 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :rule -from
 	    ))
 
+	  #|
+	  ; what is this for?  This is subsumed by -from>
+	  ; I must be working on something and then have forgotten this
+	  (((? reln ONT::EVENT ONT::F) ?!ev ?t
+		  :locmod (:* (? locmod ONT::SOURCE-RELN ONT::OUTSIDE ONT::OFF) (?! w w::outside w::outside-of))
+		  :loc ?!n)
+	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -to>
+	   -from_b>
+	   100
+	   (?reln ?!ev ?t
+	    :from ?!n
+	    :locmod -
+	    :loc -
+	    :rule -from_b
+	    ))
+	  |#
+	  
 	  ((?reln ?!ev ?t :locmod (? locmod ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC) :loc ?!n)
 	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -from>
 	   -to>
@@ -230,7 +249,7 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :rule -to
 	    ))
 
-	  ((?reln ?!ev ?t :locmod1 (? locmod ONT::SOURCE-RELN ONT::OUTSIDE) :loc1 ?!n)
+	  ((?reln ?!ev ?t :locmod1 (? locmod ONT::SOURCE-RELN ONT::OUTSIDE ONT::OFF) :loc1 ?!n)
 	   (?reln1 ?!n ?t1)  ; extra clause so that it is not the same as -to>
 	   -from1>
 	   100

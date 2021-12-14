@@ -30,6 +30,38 @@
 	    :rule -noop3
 	    ))
 
+	  ; do not extract spin/turn/etc without an additional modifier (e.g. "spin away")
+	  ((ONT::EVENT ?ev ONT::MOVE :LOCMOD - :TO - :FROM - :TYPE ONT::ROTATE)
+	   -noop4>
+	   100
+	   (ONT::EVENT ?ev ONT::NOOP
+	    :rule -noop4
+	    ))
+
+	  ; remove "at high pressure" from LOCMOD/LOC
+	  ((?reln0 ?ev ?t0 :LOCMOD ?locmod :LOC ?!loc)
+	   (?reln1 ?!loc (:* ?!t1 (? w w::pressure w::pressures)))
+	   -rm>
+	   100
+	   (?reln0 ?ev ?t0
+	    :LOCMOD -
+   	    :LOC -
+	    :rule -rm
+	    ))
+
+	  ; remove "at high temperature" etc from LOCMOD/LOC
+	  ((?reln0 ?ev ?t0 :LOCMOD ?locmod :LOC ?!loc)
+	   (?reln1 ?!loc ONT::MEASURE-SCALE)
+	   -rm2>
+	   100
+	   (?reln0 ?ev ?t0
+	    :LOCMOD -
+   	    :LOC -
+	    :rule -rm2
+	    ))
+	  
+
+	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	  ; change all other misc F extractions with LOC into EVENT
 	  ((ONT::F ?!ev ?t :LOCMOD ?!locmod :LOC ?loc) ; ?loc is optional because "I moved down" has only :LOCMOD but no :LOC
@@ -85,6 +117,9 @@
 	    :rule -f_to_event6
 	    ))
 
+	  
+	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	  
+	  
 	  ; change all other non-F misc extractions with LOC into TERM
 	  (((? !reln ONT::F ONT::EVENT ONT::TERM ONT::CC ONT::EPI) ?!ev ?t :LOCMOD ?!locmod :LOC ?loc)
 	   -term>
