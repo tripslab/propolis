@@ -14,6 +14,17 @@
 	    :rule -add-spec
 	    ))
 
+	  ((?reln ?!obj (? t ONT::SITUATION-ROOT)
+	    )
+	   -add-situation-root>
+	   100
+	   (?reln ?!obj ?t
+	    :spec ?reln
+	    :ONT ?t  ; TRIPS type
+	    :top_type ONT::SITUATION-ROOT
+	    :rule -add-situation-root
+	    ))
+	  
 	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	  ; bypass STATE-RESULTING-FROM
 	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
