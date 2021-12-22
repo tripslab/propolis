@@ -14,6 +14,7 @@
 	    :rule -add-spec
 	    ))
 
+	  #| ; now done in printing.lisp
 	  ((?reln ?!obj (? t ONT::SITUATION-ROOT)
 	    )
 	   -add-situation-root>
@@ -24,6 +25,7 @@
 	    :top_type ONT::SITUATION-ROOT
 	    :rule -add-situation-root
 	    ))
+	  |#
 	  
 	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	  ; bypass STATE-RESULTING-FROM

@@ -17,6 +17,7 @@
 	(parser::*kr-type-info-desired* '(:WNsense))
 	(parser::*add-lex-to-lf* t)
 	(parser::*sem-features-to-output* '(F::container F::mobility))
+	(parser::*add-top-level-type* t) ; add :top_type if type is under SITUATION-ROOT 
 	(parser::*no-positions-in-lf* nil)       ;; generate start and end positions
 	((parser::setmaxnumberentries 5000))    ;;  # constituents built before stopping
         ((parser::setmaxchartsize 5000))        ;;  max #  characters in any input
