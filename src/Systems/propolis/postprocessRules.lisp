@@ -174,6 +174,29 @@
 	    :rule -term6
 	    ))
 
+	  ; change all other non-F misc extractions with LOCATION into TERM
+	  ; sometimes -loc2> in cwmsRules_ev_add does this conversion too, but since we are lifting the location to the EVENT too (using -loc2-AFFECTED> for example), the latter covers more LF clauses and so the LOCATION is only lifted into the EVENT and not to the TERM also (e.g., "Droplets in the clouds collide")
+	  (((? !reln ONT::F ONT::EVENT ONT::TERM ONT::CC ONT::EPI) ?!ev ?t :LOCATION ?!loc)
+           (ONT::F ?!loc
+		   (? tmp ONT::POSITION-RELN
+		      ONT::GOAL-AS-CONTAINMENT ONT::GOAL-AS-ON ONT::TO ONT::TO-LOC ONT::OBJ-IN-PATH ONT::SOURCE-RELN ;ONT::PATH but not RESULTING-STATE
+		      )
+		   ;(? tmp ONT::IN-LOC ONT::AT-LOC ONT::ON ONT::OUTSIDE ONT::TRAJECTORY ONT::POS-AS-INTERSECTION)
+		   :GROUND ?!locVal)
+		   ;:FIGURE ?ev)
+           ;(?relnLoc ?!locVal (? locType ONT::PHYS-OBJECT ONT::ABSTRACT-OBJECT ONT::PART))
+           (?relnLoc ?!locVal (? !locType ONT::SITUATION-ROOT ONT::SPEECH-ACT ONT::DEFINITENESS ONT::ANY-TIME-OBJECT))	   
+	   -term7>
+	   100
+	   (ONT::TERM ?!ev ?t ;ONT::MISC
+            :TYPE ?t
+	    :LOCMOD ?tmp
+            :LOC ?!locVal
+	    :LOCATION -
+
+	    :rule -term7
+	    ))
+	  
 	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 	  
