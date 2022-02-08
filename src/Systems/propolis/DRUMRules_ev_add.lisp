@@ -270,6 +270,25 @@ ONT::SIGNALING-PATHWAY ONT::MUTANT-OBJ ONT::WILDTYPE-OBJ ))
 	    :loc1 -
 	    :rule -to1
 	    ))
+
+
+	  ;;;;;;;;;;;;;;;;;;;
+	  ;;;; undergo changes
+	  ;;;;;;;;;;;;;;;;;;;
+	  
+	  ; It undergoes changes in temperature
+	  ((?!reln0 ?ev ONT::UNDERGO-ACTION :AFFECTED ?!ev1 :NEUTRAL ?!ev2)
+	   (ONT::EVENT ?!ev2 ONT::CHANGE :AFFECTED ?ev3)  ; do we want to extract "temperature" also?
+           -undergo>
+           100
+	   (ONT::EVENT ?!ev2 ONT::CHANGE
+	    :rule -undergo
+	    :AFFECTED ?!ev1
+	    )
+          )
+
+
+
 	  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	  ; time 
