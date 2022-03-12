@@ -6,13 +6,34 @@
 	'(	  
 	  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+	  #|
 	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (:* ONT::CAUSE-EFFECT W::CAUSE) :FORMAL ?!f)
 	   -noop>
 	   100
 	   (ONT::EVENT ?!ev ONT::NOOP
 	    :rule -noop
 	    ))
+	  |#
 
+	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (:* ONT::CAUSE-EFFECT (? w W::CAUSE w::make w::get)) :FORMAL ?!f) ; the word (W::CAUSE w::make w::get) doesn't seem to matter, i.e., it could be anything.  How come?
+	   -noop>
+	   100
+	   (ONT::EVENT ?!ev ONT::NOOP
+	    :rule -noop
+	    ))
+	  
+	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (:* ONT::CAUSE-EFFECT (? w W::CAUSE w::make w::get)) :AGENT ?!ag :AFFECTED ?!aff :FORMAL ?!f)
+	   (ONT::EVENT ?!f ?!event1 :AFFECTED ?!aff :AGENT -)
+	   -addAgent>
+	   100
+	   (ONT::EVENT ?!ev ONT::NOOP   ; need this clause here because this rule covers more than -noop so -noop wouldn't fire
+	    :rule -addAgent-noop
+	    )
+	   (ONT::EVENT ?!f ?!event1
+	    :AGENT ?!ag
+	    :rule -addAgent
+	    ))
+	  
 	  ; exclude all subtypes of CAUSE-EFFECT (except CAUSE-PRODUCE-REPRODUCE which has its own rule)
 	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (? t ONT::ALLOW ONT::CAUSE-STIMULATE ONT::ENABLE ONT::ENCOURAGE ONT::ENSURE ONT::HAVE-INFLUENCE ONT::HELP ONT::MAINTAIN-KEEP ONT::MAKE-IT-SO ONT::PROVOKE ONT::START ONT::TRY) )
 	   -noop2>
