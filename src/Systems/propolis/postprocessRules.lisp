@@ -15,15 +15,25 @@
 	    ))
 	  |#
 
-	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (:* ONT::CAUSE-EFFECT (? w W::CAUSE w::make w::get)) :FORMAL ?!f) ; the word (W::CAUSE w::make w::get) doesn't seem to matter, i.e., it could be anything.  How come?
+
+	  ; It made him laugh; It caused him to sleep
+	  ; It caused a fire.  (Note: "fire" is a FORMAL, but it is not mapped to an EVENT. c.f. "He caused an explosion" in -addAgent.)
+	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (:* ONT::CAUSE-EFFECT (? w W::CAUSE w::make w::get)) :AFFECTED ?!aff :FORMAL ?!f) ; the word (W::CAUSE w::make w::get) doesn't seem to matter, i.e., it could be anything.  How come?  (If the w did matter, we need to add the past tense etc of the words.)
 	   -noop>
 	   100
 	   (ONT::EVENT ?!ev ONT::NOOP
 	    :rule -noop
 	    ))
-	  
-	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (:* ONT::CAUSE-EFFECT (? w W::CAUSE w::make w::get)) :AGENT ?!ag :AFFECTED ?!aff :FORMAL ?!f)
-	   (ONT::EVENT ?!f ?!event1 :AFFECTED ?!aff :AGENT -)
+
+	  ; transfer AGENT of CAUSE-EFFECT to the FORMAL 
+	  ; It made the ball roll
+	  ; He made/caused an explosion.  (Note: "explosion" is FORMAL and is mapped to a DESTROY EVENT.)
+	  ((ONT::EVENT ?!ev ONT::CREATE :TYPE (:* ONT::CAUSE-EFFECT (? w W::CAUSE w::make w::get)) :AGENT ?!ag
+		       ;:AFFECTED ?!aff
+		       :FORMAL ?!f)
+	   (ONT::EVENT ?!f ?!event1
+		       ;:AFFECTED ?!aff
+		       :AGENT -)
 	   -addAgent>
 	   100
 	   (ONT::EVENT ?!ev ONT::NOOP   ; need this clause here because this rule covers more than -noop so -noop wouldn't fire
