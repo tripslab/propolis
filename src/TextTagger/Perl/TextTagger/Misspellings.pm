@@ -50,7 +50,7 @@ sub tag_misspellings {
   my ($self, $text) = @_;
   my @typos = ();
   # change whitespace to simple spaces to avoid embedded newlines
-  $text =~ s/\s/ /;
+  $text =~ s/\s/ /g;
   # send (escaped) text to aspell
   print $aspell_out "^$text\n";
   # read its output a line at a time, until a blank line
